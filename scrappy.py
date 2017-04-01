@@ -1,13 +1,20 @@
-# from urllib.request import Request, urlopen
 from bs4 import BeautifulSoup
-# page = Request("https://www.youtube.com/")
-
-# soup = BeautifulSoup(html_doc, 'html.parser')
+from flask import Flask, render_template
 import urllib.request
 
-req = urllib.request.Request('https://www.youtube.com/')
-with urllib.request.urlopen(req) as response:
-   the_page = response.read()
+app= Flask(__name__)
 
-soup = BeautifulSoup(the_page, "lxml")
-print(soup.title)
+@app.route('/', methods=['GET', 'POST'])
+def index():
+    req = urllib.request.Request('https://www.youtube.com/')
+    with urllib.request.urlopen(req) as response:
+       the_page = response.read()
+
+    soup = BeautifulSoup(the_page, "lxml")
+    webTitle= soup.title
+    # print(soup.title)
+
+    return render_template("popup.html", webTitle= webTitle)
+
+if __name__=="__main__":
+    app.run(debug=True)
