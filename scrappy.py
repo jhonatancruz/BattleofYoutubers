@@ -8,8 +8,8 @@ app= Flask(__name__)
 def index():
     return render_template("popup.html")
 
-@app.route('/', methods=['GET', 'POST'])
-def evaluativeUrl():
+@app.route('/url', methods=['GET', 'POST'])
+def evaluateUrl():
     url= request.form['URL']
     req = urllib.request.Request(url)
     with urllib.request.urlopen(req) as response:
@@ -18,7 +18,14 @@ def evaluativeUrl():
     soup = BeautifulSoup(the_page, "lxml")
     webTitle= soup.title
 
-    return render_template("urlEval.html", webTitle=webTitle)
+    urlRemove=[]
+    for x in webTitle:
+        if x !='[':
+            urlRemove.append(x)
+        else:
+            print("dont enter ")
+
+    return render_template("urlEval.html", urlRemove=urlRemove)
 
 if __name__=="__main__":
     app.run(debug=True)
