@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta charset="iso-8859-1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <style>
 body {
     margin: 0 !important;
@@ -18,16 +19,15 @@ body {
 </head>
 <body onLoad="">
   <center><h1>YoutubeTranscripts</h1></center>
-  <button>click me</button>
-  {{webTitle}}
 <!-- <iframe src=http://localhost:5000/ id="frame" seamless="seamless" scrolling="no"></iframe> -->
-
-<form>
+<br>
+<center><form action="{{ url_for('evaluateUrl') }}" method="POST">
 URL:
-<input type = "text" name = "URL">
-</form>
+<input type = "text" name = "URL"></input>
+<button type="submit" class="btn btn-danger btn-md">Submit</button>
+</form></center>
 
-<button>Submit</button>
+
 
 </body>
 </html>
