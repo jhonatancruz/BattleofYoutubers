@@ -15,18 +15,46 @@ body {
     overflow: hidden;
     width:500;
     height:500;
+}#container{
+  border: 5px solid gray;
+  background-color: black;
+  width: 60%;
+  height: auto;
+  color: white;
 }
 </style>
 </head>
 <body onLoad="">
   <center><h1>YoutubeTranscripts</h1></center>
   <font face="Comic Sans MS " size="5">
-  <center><p>The title of the url that you provided is {{urlRemove}}</p></center>
-  </font>
+    <h1>The title of the url that you provided is:</h1>
+    </font>
+    <div id="container" class="container">
+    <center><p>{{urlRemove}}</p></center>
+  </div>
 <!-- <iframe src=http://localhost:5000/ id="frame" seamless="seamless" scrolling="no"></iframe> -->
-<center><form action="/getLines">
-  <button type="submit">First line of youtube video?</button>
-</form><center>
-</body>
 
+<font face="Comic Sans MS " size="5">
+  <h1>The description is:</h1>
+  </font>
+  <div id="container" class="container">
+    <center><p>{{cleanLine}}</p></center>
+</div>
+<!-- <center><form action="/getLines">
+  <button type="submit">First line of youtube video?</button>
+</form><center> -->
+</body>
+<script>
+// function gotoyoutube(){
+//   JavascriptExecutor js = (JavascriptExecutor)driver;
+//   Js.executeScript("alert('hello world');");
+//   // alert("working");
+//   // var webdriver= require('selenium-webdriver');
+//   // var driver= new webdriver.Builder().withCapabilities(webdriver.Capabilities.chrome()).build();
+//   // driver.get('https://www.youtube.com/watch?v=SFas42HBtMg');
+//   // //window.open('https://www.youtube.com/watch?v=SFas42HBtMg');
+//   // document.getElementsByClassName('yt-uix-button yt-uix-button-size-default yt-uix-button-opacity yt-uix-button-has-icon no-icon-markup pause-resume-autoplay yt-uix-menu-trigger yt-uix-tooltip').click()
+//   // getElementby
+// }
+</script>
 </html>
