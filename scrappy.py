@@ -59,7 +59,7 @@ def testvid():
     firstYoutuber=request.form['y1']
     secYoutuber= request.form['y2']
 
-    driver= webdriver.Chrome()
+    driver= webdriver.PhantomJS()
     driver.set_window_size(1124, 850) # set browser size.
     url1= "https://www.youtube.com/user/"+firstYoutuber+"/videos"
     url2= "https://www.youtube.com/user/"+secYoutuber+"/videos"
@@ -75,11 +75,13 @@ def testvid():
     nameVidDriver1= driver.find_element_by_xpath("//*[@id='eow-title']")
     datePostedDriver1= driver.find_element_by_xpath("//*[@id='watch-uploader-info']/strong")
     viewsDriver1= driver.find_element_by_xpath("//*[@id='watch7-views-info']/div[1]")
+    subsDriver1= driver.find_element_by_xpath("//*[@id='watch7-subscription-container']/span/span[1]")
     likes= likesDriver.text
     dislikes= dislikesDriver.text
     nameVid= nameVidDriver1.text
     datePosted= datePostedDriver1.text #this is the date
     views1= viewsDriver1.text
+    subs1=subsDriver1.text
 
     #start date algo under here
 
@@ -92,16 +94,18 @@ def testvid():
     nameVidDriver= driver.find_element_by_xpath("//*[@id='eow-title']")
     datePostedDriver2= driver.find_element_by_xpath("//*[@id='watch-uploader-info']/strong")
     viewsDriver2= driver.find_element_by_xpath("//*[@id='watch7-views-info']/div[1]")
+    subsDriver2= driver.find_element_by_xpath("//*[@id='watch7-subscription-container']/span/span[1]")
     likes2= likesDriver.text
     dislikes2= dislikesDriver.text
     nameVid2= nameVidDriver.text
     datePosted2= datePostedDriver2.text
     views2= viewsDriver2.text
+    subs2= subsDriver2.text
 
 
     return render_template('showResult.html', firstYoutuber=firstYoutuber,secYoutuber=secYoutuber, likes=likes, dislikes=dislikes,
     likes2=likes2, dislikes2=dislikes2, nameVid2=nameVid2, nameVid=nameVid, datePosted=datePosted, datePosted2=datePosted2,
-    views1=views1, views2=views2)
+    views1=views1, views2=views2, subs1=subs1, subs2=subs2)
 
 if __name__=="__main__":
     app.run(debug=True)
