@@ -7,6 +7,11 @@ import time
 import datetime
 
 
+def Algo_You(views,day,subscriber_count,Likes,Dislikes):
+	points = (views/day)/subscriber_count * (views/(Likes - Dislikes))
+	return points
+
+
 app= Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
@@ -84,14 +89,10 @@ def testvid():
     subs1=subsDriver1.text
 
     #start date algo under here
-<<<<<<< HEAD
+    
     Months = {"Jan" : 1, "Feb" : 2, "Mar" : 3, "Apr" : 4, "May" : 5, "Jun" : 6, "Jul" : 7, "Aug" : 8, "Sep" : 9, "Nov" : 10, "Oct" :11, "Dec" : 12}
 
     datePosted = datePosted[13:]
-
-=======
-
-
     datePosted = datePosted.replace(",", "")
     Dateposted = datePosted.split(" ")
     Dateposted[0] = Months[Dateposted[0]]
@@ -103,8 +104,19 @@ def testvid():
     DatePosted = datetime.datetime(Dateposted[2], Dateposted[0], Dateposted[1])
     D3 = now - DatePosted
     datePosted = D3.days
+    Views = views1[:-6]
+    Views = Views.replace(",", "")
+    Views = int(Views)
+    subs = subs1.replace(",", "")
+    subs = int(subs)
+    Likes = likes.replace(",", "")
+    Likes = int(Likes)
+    Dislikes = dislikes.replace(",", "")
+    Dislikes = int(Dislikes)
+    points1 = Algo_You(Views,datePosted,subs,Likes,Dislikes)
+    print (points1)
 
->>>>>>> 0a24b9aa9a63e70b29a5cf41b6ebdeefa5a78b7c
+
     driver.get(url2)
     recentVid =driver.find_element_by_xpath("//*[@id='channels-browse-content-grid']/li[1]/div/div[1]/div[2]/h3/a").click()
     time.sleep(2)
@@ -134,6 +146,17 @@ def testvid():
     DatePosted2 = datetime.datetime(Dateposted2[2], Dateposted2[0], Dateposted2[1])
     D3 = now - DatePosted2
     datePosted2 = D3.days
+    Views = views2[:-6]
+    Views = Views.replace(",", "")
+    Views = int(Views)
+    subs = subs2.replace(",", "")
+    subs = int(subs)
+    Likes = likes2.replace(",", "")
+    Likes = int(Likes)
+    Dislikes = dislikes2.replace(",", "")
+    Dislikes = int(Dislikes)
+    points2 = Algo_You(Views,datePosted,subs,Likes,Dislikes)
+    print(points2)
 
     return render_template('showResult.html', firstYoutuber=firstYoutuber,secYoutuber=secYoutuber, likes=likes, dislikes=dislikes,
     likes2=likes2, dislikes2=dislikes2, nameVid2=nameVid2, nameVid=nameVid, datePosted=datePosted, datePosted2=datePosted2,
