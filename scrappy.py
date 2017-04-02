@@ -4,6 +4,7 @@ import urllib.request
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import time
+import datetime
 
 
 app= Flask(__name__)
@@ -77,9 +78,10 @@ def testvid():
     likes= likesDriver.text
     dislikes= dislikesDriver.text
     nameVid= nameVidDriver1.text
-    datePosted= datePostedDriver1.text
+    datePosted= datePostedDriver1.text #this is the date
     views1= viewsDriver1.text
 
+    #start date algo under here
 
     driver.get(url2)
     recentVid =driver.find_element_by_xpath("//*[@id='channels-browse-content-grid']/li[1]/div/div[1]/div[2]/h3/a").click()
