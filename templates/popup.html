@@ -15,21 +15,30 @@ body {
     overflow: hidden;
     width:500;
     height:500;
+}.container{
+
 }
 </style>
 </head>
 <body onLoad="">
-  <center><h1>YoutubeTranscripts</h1></center>
-<!-- <iframe src=http://localhost:5000/ id="frame" seamless="seamless" scrolling="no"></iframe> -->
-<br>
-<center><form action="{{ url_for('evaluateUrl') }}" method="POST">
-<font face="Comic Sans MS" size="5">
-URL:
-</font>
-<input type = "text" name = "URL"></input>
-<button type="submit" class="btn btn-danger btn-md">Submit</button>
-</form></center>
-
+  <center><h1>Battle of Youtubers</h1></center>
+  <!-- <iframe src=http://localhost:5000/ id="frame" seamless="seamless" scrolling="no"></iframe> -->
+  <br>
+<div>
+<form action="{{ url_for('evaluateUrl') }}" method="POST">
+<div class="container">
+  <!-- <font face="Comic Sans MS" size="5">URL:</font> -->
+    <label>Youtuber A:</label>
+      <input type = "text" name = "y1"></input>
+</div>
+<div class="container">
+    <label> Youtuber B:</label>
+      <input type="text" name="y2"></input>
+  </form></center>
+</div>
+<button action="submit" class="">Begin the Battle</button>
+</form>
+</div>
 
 
 </body>
