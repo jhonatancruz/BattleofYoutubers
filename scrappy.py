@@ -168,7 +168,7 @@ def testvid():
 
     return render_template('showResult.html', firstYoutuber=firstYoutuber,secYoutuber=secYoutuber, likes=likes, dislikes=dislikes,
     likes2=likes2, dislikes2=dislikes2, nameVid2=nameVid2, nameVid=nameVid, datePosted=datePosted, datePosted2=datePosted2,
-    views1=views1, views2=views2, subs1=subs1, src2=src2, src1=src1)
+    views1=views1, views2=views2, subs1=subs1, subs2=subs2, src2=src2, src1=src1)
 
 if __name__=="__main__":
     app.run(debug=True)
