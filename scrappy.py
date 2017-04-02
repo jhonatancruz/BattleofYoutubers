@@ -63,6 +63,7 @@ def testvid():
     driver.set_window_size(1124, 850) # set browser size.
     url1= "https://www.youtube.com/user/"+firstYoutuber+"/videos"
     url2= "https://www.youtube.com/user/"+secYoutuber+"/videos"
+
     # driver.get(url1)
     # driver.get(url2)
 
@@ -76,21 +77,21 @@ def testvid():
     datePostedDriver1= driver.find_element_by_xpath("//*[@id='watch-uploader-info']/strong")
     viewsDriver1= driver.find_element_by_xpath("//*[@id='watch7-views-info']/div[1]")
     subsDriver1= driver.find_element_by_xpath("//*[@id='watch7-subscription-container']/span/span[1]")
+    img1= driver.find_element_by_xpath("//*[@id='watch7-user-header']/a/span/span/span/img")
     likes= likesDriver.text
     dislikes= dislikesDriver.text
     nameVid= nameVidDriver1.text
     datePosted= datePostedDriver1.text #this is the date
     views1= viewsDriver1.text
     subs1=subsDriver1.text
+    src1= img1.get_attribute('src')
+
 
     #start date algo under here
-<<<<<<< HEAD
+
     Months = {"Jan" : 1, "Feb" : 2, "Mar" : 3, "Apr" : 4, "May" : 5, "Jun" : 6, "Jul" : 7, "Aug" : 8, "Sep" : 9, "Nov" : 10, "Oct" :11, "Dec" : 12}
 
     datePosted = datePosted[13:]
-
-=======
-
 
     datePosted = datePosted.replace(",", "")
     Dateposted = datePosted.split(" ")
@@ -104,7 +105,6 @@ def testvid():
     D3 = now - DatePosted
     datePosted = D3.days
 
->>>>>>> 0a24b9aa9a63e70b29a5cf41b6ebdeefa5a78b7c
     driver.get(url2)
     recentVid =driver.find_element_by_xpath("//*[@id='channels-browse-content-grid']/li[1]/div/div[1]/div[2]/h3/a").click()
     time.sleep(2)
@@ -115,12 +115,14 @@ def testvid():
     datePostedDriver2= driver.find_element_by_xpath("//*[@id='watch-uploader-info']/strong")
     viewsDriver2= driver.find_element_by_xpath("//*[@id='watch7-views-info']/div[1]")
     subsDriver2= driver.find_element_by_xpath("//*[@id='watch7-subscription-container']/span/span[1]")
+    img2= driver.find_element_by_xpath("//*[@id='watch7-user-header']/a/span/span/span/img")
     likes2= likesDriver.text
     dislikes2= dislikesDriver.text
     nameVid2= nameVidDriver.text
     datePosted2= datePostedDriver2.text
     views2= viewsDriver2.text
     subs2= subsDriver2.text
+    src2= img2.get_attribute('src')
 
     datePosted2 = datePosted2[13:]
     datePosted2 = datePosted2.replace(",", "")
@@ -137,7 +139,7 @@ def testvid():
 
     return render_template('showResult.html', firstYoutuber=firstYoutuber,secYoutuber=secYoutuber, likes=likes, dislikes=dislikes,
     likes2=likes2, dislikes2=dislikes2, nameVid2=nameVid2, nameVid=nameVid, datePosted=datePosted, datePosted2=datePosted2,
-    views1=views1, views2=views2, subs1=subs1, subs2=subs2)
+    views1=views1, views2=views2, subs1=subs1, src2=src2, src1=src1)
 
 if __name__=="__main__":
     app.run(debug=True)
