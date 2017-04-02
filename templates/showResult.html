@@ -18,20 +18,50 @@ body {
 }#battlebutton{
   padding-left: 10px;
 }
+.vertical {
+  display: inline-block;
+  width: 20%;
+  height: 40px;
+  -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
+  transform: rotate(-90deg);
+  /*float:right;*/
+
+}
+.vertical {
+  box-shadow: inset 0px 4px 6px #ccc;
+}
+.progress-bar {
+  box-shadow: inset 0px 4px 6px rgba(100,100,100,0.6);
+}.container{
+
+}.youtuber1{
+  float: left;
+}.youtuber2{
+  text-align: right;
+}
 
 
 </style>
 </head>
 <body>
-<center><h1>Battle of Youtubers</h1></center>
-  <h2>Youtuber:{{firstYoutuber}}</h2>
-  <p>Name of Vid:{{nameVid}}</p>
-  <p>Subs: {{subs1}}</p>
-  <p>Views: {{views1}}</p>
-  <p>Likes:{{likes}}</p>
-  <p>Dislikes:{{dislikes}}</p>
-  <p>Date Posted/Time: {{datePosted}}</p>
+  <center><h1>Battle of Youtubers</h1></center>
+<div class= "container">
+  <div class="youtuber1">
+    <h2>Youtuber:{{firstYoutuber}}</h2>
+    <img src="static/nvpImage.png" height="40" width="35" id="y1" style="margin-right: 10px">
+    <p>Name of Vid:{{nameVid}}</p>
+    <p>Subs: {{subs1}}</p>
+    <p>Views: {{views1}}</p>
+    <p>Likes:{{likes}}</p>
+    <p>Dislikes:{{dislikes}}</p>
+    <p>Date Posted/Time: {{datePosted}}</p>
+  </div>
 
+  <!-- <div class="progress vertical">
+    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">
+    </div>
+  </div> -->
+<div class="youtuber2">
   <h2>Youtuber: {{secYoutuber}}</h2>
   <p>Name of Vid: {{nameVid2}}</p>
   <p>Subs: {{subs2}}</p>
@@ -39,5 +69,11 @@ body {
   <p>Likes:{{likes2}}</p>
   <p>Dislikes:{{dislikes2}}</p>
   <p>Date Posted/Time: {{datePosted2}}</p>
+</div>
+  <!-- <div class="progress vertical">
+  <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 95%;">
+</div>
+</div> -->
+</div>
 </body>
 </html>
