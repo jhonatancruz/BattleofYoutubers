@@ -84,10 +84,10 @@ def testvid():
     subs1=subsDriver1.text
 
     #start date algo under here
-    Months = {"January" : 1, "February" : 2, "March" : 3, "Apr" : 4, "May" : 5, "June" : 6, "July" : 7, "August" : 8, "September" : 9, "Novemeber" : 10, "October" : 11, "December" : 12}
-    
+    Months = {"Jan" : 1, "Feb" : 2, "Mar" : 3, "Apr" : 4, "May" : 5, "Jun" : 6, "Jul" : 7, "Aug" : 8, "Sep" : 9, "Nov" : 10, "Oct" :11, "Dec" : 12}
+
     datePosted = datePosted[13:]
-    
+
     driver.get(url2)
     recentVid =driver.find_element_by_xpath("//*[@id='channels-browse-content-grid']/li[1]/div/div[1]/div[2]/h3/a").click()
     time.sleep(2)
