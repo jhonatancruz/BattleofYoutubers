@@ -59,7 +59,7 @@ def testvid():
     firstYoutuber=request.form['y1']
     secYoutuber= request.form['y2']
 
-    driver= webdriver.PhantomJS()
+    driver= webdriver.Chrome()
     driver.set_window_size(1124, 850) # set browser size.
     url1= "https://www.youtube.com/user/"+firstYoutuber+"/videos"
     url2= "https://www.youtube.com/user/"+secYoutuber+"/videos"
