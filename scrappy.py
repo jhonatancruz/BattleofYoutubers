@@ -9,6 +9,7 @@ import datetime
 
 def Algo_You(views,day,subscriber_count,Likes,Dislikes):
 	points = (views/day)/subscriber_count * (views/(Likes - Dislikes))
+	points = points * 10
 	return points
 
 
