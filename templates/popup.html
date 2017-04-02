@@ -11,35 +11,58 @@ body {
     /*width: 500;*/
 }
 
-#frame {
+/*#frame {
     overflow: hidden;
     width:500;
-    height:500;
-}.container{
-
+    height:500;*/
+}#battlebutton{
+  padding-left: 10px;
 }
+
+
 </style>
 </head>
-<body onLoad="">
+<!-- <body onLoad="">
   <center><h1>Battle of Youtubers</h1></center>
-  <!-- <iframe src=http://localhost:5000/ id="frame" seamless="seamless" scrolling="no"></iframe> -->
   <br>
-<div>
+<center><div id="cont" class="container">
 <form action="{{ url_for('evaluateUrl') }}" method="POST">
-<div class="container">
-  <!-- <font face="Comic Sans MS" size="5">URL:</font> -->
+<div id="contleft" >
     <label>Youtuber A:</label>
       <input type = "text" name = "y1"></input>
 </div>
-<div class="container">
+<div id="contright">
     <label> Youtuber B:</label>
       <input type="text" name="y2"></input>
   </form></center>
 </div>
-<button action="submit" class="">Begin the Battle</button>
+<center><button action="submit" class="">Begin the Battle</button></center>
 </form>
+</div></center> -->
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12">
+            <center><h1>Battle of Youtubers</h1><center>
+        </div>
+    </div>
+    <br>
+    <!-- row requires "row-divided" class -->
+    <form action="/testvid" method="POST">
+    <center><div class="row row-divided">
+        <div class="col-xs-7 column-one">
+            <label>Youtuber A:</label>
+            <input name="y1"></input>
+        </div>
+      	<!-- <div class="vertical-divider">or</div> -->
+    	<div class="col-xs-3 column-two">
+            <label>Youtuber B:</label>
+            <input name="y2"></input>
+    	</div>
+    </div></center>
 </div>
-
-
+<center><button>Battle Now</button></center>
+</form>
 </body>
 </html>
